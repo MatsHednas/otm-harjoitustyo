@@ -1,0 +1,115 @@
+commit 57e91329a50e4ddd8a27a3c5253e2f38a325ea08
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 18:23:05 2018 +0200
+
+    muutoksia
+
+ tiedostoja/file1.txt  | 0
+ tiedostoja/file2.txt  | 0
+ tiedostoja/file22.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 40f2d61014f5e0860e29ea20c4b0606d3dad0f1b
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 18:02:51 2018 +0200
+
+    luotu tiedostoja hakemisto ja lisätty siihen kolme tiedostoa
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2c2523f842f1e656a0614898f73270e14a478045
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 17:31:22 2018 +0200
+
+    muutoksia
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 48a7597026991f74d3c35aa2391217993b7054e3
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 17:28:34 2018 +0200
+
+    uusi nimi eka.txt
+
+ eka.txt      | 2 ++
+ tiedosto.txt | 2 --
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 6ff5812fb97d33b3fe919de91bee634a033cd74c
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 17:19:20 2018 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 2f84fd646e60ab7b25d5114b3237b44a8e01cbf5
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 17:11:09 2018 +0200
+
+    lisätty kappa123 ja poistettu muuta
+
+ tiedosto.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 371361cb80bd21946a68cffec19b8b261cb94585
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 17:09:04 2018 +0200
+
+    lipsumia lisätty tiedtostoon tiedosto.txt
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4cf191af85966c00fc3489dd12967b9702ad6d4a
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 17:01:17 2018 +0200
+
+    stuff lisatty
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 60bbccc5722b4554d3b632149a9243d825c2a19c
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 16:59:47 2018 +0200
+
+    muutokset toiseen ja kolmanteen
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit c788a033c0551731f40a65f9adcd492549c9fe69
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 16:57:57 2018 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 382881c1f5cdb23937635b55076a835d949a4bd6
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 16:48:06 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 3f41be8738044310a92b7572e595ac6307acf3d8
+Author: Maz <hednas.mats@gmail.com>
+Date:   Fri Mar 16 16:36:07 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
