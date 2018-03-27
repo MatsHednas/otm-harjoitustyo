@@ -20,9 +20,9 @@ tarpeeksi rahaa kyseiseen panos-summaan. Jos pelaajalta loppuu raha peli on häv
   
   - Graafinen käyttöliittymä toimii ydinosien suhteen
   
-## Jatkokehitysideoit
+## Jatkokehitysideoita
 
-Kun perustoiminnallisuus on toteutettu voidaan isätä seuraavia toiminnallisuuksia:
+Kun perustoiminnallisuus on toteutettu voidaan lisätä seuraavia toiminnallisuuksia:
 
 - Tuplaus(Double)
   - Pelaaja voi halutessaan tuplata panoksensa jos hänen kahden ensimmäisen saamansa kortin yhteisarvo on 9-11. Tällöin pelaaja saa
