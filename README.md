@@ -1,5 +1,7 @@
 # OTM-harjoitustyö
 ## Tehtävät
+### Blackjack (Harjoitustyö)
+[Vaatimusmäärittely](https://github.com/mluukkai/otm-harjoitustyo/master/dokumentaatio/vaatimusmaarittely.md)
 ### Viikko1
 [komentorivi.txt](https://github.com/MatsHednas/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
