@@ -2,7 +2,7 @@
 
 | päivä | aika | mitä tein  |
 | :----:|:-----| :-----|
-| 27.3. |   2h   | projekti luotu, vaatimusmäärittely ja tuntikirjankpito luotu |
+| 27.3. |   2h   | projekti, vaatimusmäärittely ja tuntikirjanpito luotu |
 |       |      |       |
 |       |      |       |
 |       |      |       |
