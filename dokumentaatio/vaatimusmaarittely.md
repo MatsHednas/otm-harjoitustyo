@@ -1,5 +1,5 @@
-#Vaatimusmäärittely
-##Sovelluksen tarkoitus
+# Vaatimusmäärittely
+## Sovelluksen tarkoitus
 
 Sovellus on klassinen Blackjack-peli. Pelaaja aloittaa pelin tietyllä rahamäärällä ja voit itse valita panoksens kunhan hänellä on
 tarpeeksi rahaa kyseiseen panos-summaan. Jos pelaajalta loppuu raha peli on hävitty ja peli alkaa alusta.
@@ -20,7 +20,7 @@ tarpeeksi rahaa kyseiseen panos-summaan. Jos pelaajalta loppuu raha peli on häv
   
   - Graafinen käyttöliittymä toimii ydinosien suhteen
   
-##Jatkokehitysideoit
+## Jatkokehitysideoit
 
 Kun perustoiminnallisuus on toteutettu voidaan isätä seuraavia toiminnallisuuksia:
 
