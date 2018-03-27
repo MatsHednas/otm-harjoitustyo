@@ -5,6 +5,4 @@
 
 [gitlog.txt](https://github.com/MatsHednas/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
-Lisää kokeilua...
 
-Vielä lisää muokkausta...
