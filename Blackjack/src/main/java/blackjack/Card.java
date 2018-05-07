@@ -20,12 +20,12 @@ public class Card {
      * @param value = 1,2,3,...8,9,10,11
      * @param cardImage An image of the card
      */
-    public Card(String name, String suit, int value, BufferedImage cardImage) {
+    public Card(String name, String suit, int value) {
         
         this.cardName = name;
         this.suit = suit;
         this.cardValue = value;
-        this.cardImage = cardImage;
+        this.cardImage = null;
         
     }
     
@@ -34,7 +34,7 @@ public class Card {
      * @return 
      */
     public String toString() {
-        return cardName + " of " +suit;
+        return cardName + "_of_" + suit;
     }
     
     /**
@@ -45,8 +45,20 @@ public class Card {
         return cardValue;
     }
     
+    /**
+     * Returns the image of the card as a BufferedImage
+     * @return 
+     */
     public BufferedImage getCardImage() {
         return cardImage;
+    }
+    
+    /**
+     * 
+     * @param image Sets a BuffereImage as the cards image
+     */
+    public void setCardImage(BufferedImage image) {
+        this.cardImage = image;
     }
             
     

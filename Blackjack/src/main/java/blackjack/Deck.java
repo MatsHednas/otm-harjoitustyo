@@ -5,10 +5,20 @@
  */
 package blackjack;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author mazz
  */
 public class Deck {
+    
+    private ArrayList<Card> Cards;
+    
+    public Deck() {
+        
+        this.Cards = new ArrayList<>();
+        
+    }
     
 }
