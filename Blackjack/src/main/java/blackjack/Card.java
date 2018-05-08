@@ -1,13 +1,24 @@
 
 package blackjack;
 
+
+
+import javafx.scene.shape.Rectangle;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.layout.StackPane;
+import javafx.scene.Parent;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javax.imageio.ImageIO;
 
 /**
  *
  * @author mazz
  */
-public class Card {
+public class Card extends Parent {
     
     private String cardName, suit;
     private int cardValue;
@@ -18,7 +29,7 @@ public class Card {
      * @param name = 2,3,4,...,Jack,Queen,King,Ace
      * @param suit "spades","clubs","hearts","diamonds"
      * @param value = 1,2,3,...8,9,10,11
-     * @param cardImage An image of the card
+     * cardImage An image representation of the card
      */
     public Card(String name, String suit, int value) {
         
@@ -60,7 +71,20 @@ public class Card {
     public void setCardImage(BufferedImage image) {
         this.cardImage = image;
     }
-            
+    
+    public void setCardSlot() {
+        
+        Rectangle cardSlot = new Rectangle(72,96);
+        WritableImage cardFXImage = SwingFXUtils.toFXImage(cardImage, null);
+        ImageView cardView = new ImageView(cardFXImage);
+     
+        getChildren().add(new StackPane(cardSlot, cardView));
+    }
+    
+    public void hideCard() throws IOException {
+        BufferedImage backside = ImageIO.read(new File("Cards/Backside.png"));
+        this.cardImage = backside;
+    }
     
     
     

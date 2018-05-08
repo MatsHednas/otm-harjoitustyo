@@ -59,6 +59,7 @@ public class Deck {
                 
                 String nameofCard = card.toString();
                 card.setCardImage(ImageIO.read(new File("Cards/" + nameofCard +".png")));
+                card.setCardSlot();
                 
                 this.Cards.add(card);             
             }
@@ -83,12 +84,14 @@ public class Deck {
                 
                 String nameOfFaceCard = faceCard.toString();
                 faceCard.setCardImage(ImageIO.read(new File("Cards/" + nameOfFaceCard +".png")));
+                faceCard.setCardSlot();
                 this.Cards.add(faceCard);
             }
             
             Card aceCard = new Card("Ace", suit, 11);
             String nameOfAce = aceCard.toString();
             aceCard.setCardImage(ImageIO.read(new File("Cards/" + aceCard +".png")));
+            aceCard.setCardSlot();
             this.Cards.add(aceCard);
         }
     }
