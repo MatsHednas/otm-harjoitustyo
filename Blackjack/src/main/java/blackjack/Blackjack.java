@@ -6,12 +6,12 @@
 package blackjack;
 
 import java.awt.image.BufferedImage;
-import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
+import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -45,14 +45,17 @@ public class Blackjack extends Application {
     private HBox dealersCards = new HBox(20);
     
     private SimpleBooleanProperty playable = new SimpleBooleanProperty(false);
+    private SimpleBooleanProperty gameOver = new SimpleBooleanProperty(false);
+    private SimpleBooleanProperty betTooBig = new SimpleBooleanProperty(false);
     
     Text dealersHandValue = new Text("Dealer: ");
     
-    SimpleIntegerProperty cash = new SimpleIntegerProperty(10000);
+    SimpleIntegerProperty cash = new SimpleIntegerProperty(1001);
     int money = cash.intValue();
     String bank = Integer.toString(money);
-    int betValue = 10;
-    String betString = null;
+    SimpleIntegerProperty betValue = new SimpleIntegerProperty(0);
+    int betAsInt = betValue.intValue();
+    String betAsString = Integer.toString(betAsInt);
     
     private Parent createGame() {
         
@@ -102,22 +105,44 @@ public class Blackjack extends Application {
       VBox betmatVBox = new VBox(20);
       betmatVBox.setAlignment(Pos.CENTER);
       
-      final TextField bet = new TextField("BET");
-      //bet.setDisable(true);
-      bet.setMaxWidth(60);
+      Text betAmount = new Text("");
+      betAmount.setText("");
+      betAmount.setFill(Color.WHITE);
       Text saldo = new Text("");
       saldo.setFill(Color.WHITE);
+      Text filler1 = new Text("");
+      Text filler2 = new Text("");
       
-      Button btnPlay = new Button("PLAY");
-      Button btnHit = new Button("HIT");
-      Button btnStand = new Button("STAND");
+      Button bet1 = new Button("1$");
+      Button bet10 = new Button("10$");
+      Button bet25 = new Button("25$");
+      Button bet50 = new Button("50$");
+      Button bet100 = new Button("100$");
+      Button bet500 = new Button("500$");
       
-      HBox buttonHBox = new HBox(20);
-      buttonHBox.setAlignment(Pos.CENTER);
-      btnHit.setDisable(true);
-      btnStand.setDisable(true);
-      buttonHBox.getChildren().addAll(btnHit, btnStand);
-      betmatVBox.getChildren().addAll(bet, btnPlay, saldo, buttonHBox);
+      Button play = new Button("PLAY");
+      Button hit = new Button("HIT");
+      Button stand = new Button("STAND");
+      Button reset = new Button("RESET GAME");
+      
+      HBox hitAndStandHBox = new HBox(20);
+      HBox bet1And10HBox = new HBox(20);
+      HBox bet25And50HBox = new HBox(20);
+      HBox bet100And500HBox = new HBox(20);
+      
+      hitAndStandHBox.setAlignment(Pos.CENTER);
+      bet1And10HBox.setAlignment(Pos.CENTER);
+      bet25And50HBox.setAlignment(Pos.CENTER);
+      bet100And500HBox.setAlignment(Pos.CENTER);
+      hit.setDisable(true);
+      stand.setDisable(true);
+      hitAndStandHBox.getChildren().addAll(hit, stand);
+      bet1And10HBox.getChildren().addAll(bet1, bet10);
+      bet25And50HBox.getChildren().addAll(bet25, bet50);
+      bet100And500HBox.getChildren().addAll(bet100, bet500);
+      betmatVBox.getChildren().addAll(bet1And10HBox, bet25And50HBox, 
+              bet100And500HBox, betAmount, play, saldo, hitAndStandHBox,
+              filler1, filler2, reset);
       betmatStack.getChildren().addAll(betmat, betmatVBox);
       
       // ADD BOTH SIDES STACKPANES TO THE ROOT LAYOUT
@@ -127,12 +152,26 @@ public class Blackjack extends Application {
       
       // BIND THE PROPERTIES
       
-      btnPlay.disableProperty().bind(playable);
-      btnHit.disableProperty().bind(playable.not());
-      btnStand.disableProperty().bind(playable.not());
+      BooleanBinding playBond = playable.or(gameOver).or(betTooBig);
+      play.disableProperty().bind(playBond);
+      hit.disableProperty().bind(playable.not());
+      stand.disableProperty().bind(playable.not());
+      bet1.disableProperty().bind(playable);
+      bet10.disableProperty().bind(playable);
+      bet25.disableProperty().bind(playable);
+      bet50.disableProperty().bind(playable);
+      bet100.disableProperty().bind(playable);
+      bet500.disableProperty().bind(playable);
+      //play.disableProperty().bind(gameOver);
+      reset.disableProperty().bind(gameOver.not());
+      
+      
+      
+      
       
       playersHandValue.textProperty().bind(new SimpleStringProperty("Player: ").concat(player.valueProperty().asString()));
       saldo.textProperty().bind(new SimpleStringProperty("Money: ").concat(cash.asString()).concat("$"));
+      betAmount.textProperty().bind(new SimpleStringProperty("Bet: ").concat(betValue.asString()).concat("$"));
       
       player.valueProperty().addListener((obs, old, newValue) -> {
           if (newValue.intValue() >= 21) {
@@ -157,28 +196,35 @@ public class Blackjack extends Application {
       cash.addListener((obs, old, newValue) -> {
           money = newValue.intValue();
           bank = Integer.toString(money);
+      });
+      
+      betValue.addListener((obs, old, newValue) -> {
+          betAsInt = newValue.intValue();
+          betAsString = Integer.toString(betAsInt);
       }
       );
       
       
-      
-      
       //INIT BUTTONS
       
-      btnPlay.setOnAction(event -> {
+      play.setOnAction(event -> {
           try {
-              cash.set(cash.intValue() - betValue);
+              if(cash.intValue() - betValue.intValue() < 0) {
+                  situationMessage.setText("INSUFFICIENT FUNDS");
+              } else {
+              cash.set(cash.intValue() - betValue.intValue());
               newGame();
+              }
           } catch (IOException ex) {
               Logger.getLogger(Blackjack.class.getName()).log(Level.SEVERE, null, ex);
           }
       });
       
-      btnHit.setOnAction(event -> { 
+      hit.setOnAction(event -> { 
           player.addCard(deck.drawCard());
       });
       
-      btnStand.setOnAction(event -> {
+      stand.setOnAction(event -> {
         
           
           try {
@@ -195,6 +241,80 @@ public class Blackjack extends Application {
           } catch (IOException ex) {
               Logger.getLogger(Blackjack.class.getName()).log(Level.SEVERE, null, ex);
           }
+      });
+      
+      bet1.setOnAction(event -> {
+          if(cash.intValue() >= 1) {
+          betValue.set(1);
+          situationMessage.setText("");
+          betTooBig.set(false);
+          
+          } else {
+              situationMessage.setText("INSUFFICIENT FUNDS");
+          }
+      });
+      
+      bet10.setOnAction(event -> {
+          if(cash.intValue() >= 10) {
+          betValue.set(10);
+          situationMessage.setText("");
+          betTooBig.set(false);
+          
+          } else {
+              situationMessage.setText("INSUFFICIENT FUNDS");
+          }
+      });
+      
+      bet25.setOnAction(event -> {
+          if(cash.intValue() >= 25) {
+          betValue.set(25);
+          situationMessage.setText("");
+          betTooBig.set(false);
+          
+          } else {
+              situationMessage.setText("INSUFFICIENT FUNDS");
+          }
+      });
+      
+      bet50.setOnAction(event -> {
+          if(cash.intValue() >= 50) {
+          betValue.set(50);
+          situationMessage.setText("");
+          betTooBig.set(false);
+          
+          } else {
+              situationMessage.setText("INSUFFICIENT FUNDS");
+          }
+      });
+      
+      bet100.setOnAction(event -> {
+          if(cash.intValue() >= 100) {
+          betValue.set(100);
+          situationMessage.setText("");
+          betTooBig.set(false);
+          
+          } else {
+              situationMessage.setText("INSUFFICIENT FUNDS");
+          }
+      });
+      
+      bet500.setOnAction(event -> {
+          if(cash.intValue() >= 500) {
+          betValue.set(500);
+          situationMessage.setText("");
+          betTooBig.set(false);
+            
+          
+          } else {
+              situationMessage.setText("INSUFFICIENT FUNDS");
+          }
+      });
+      
+      reset.setOnAction(event -> {
+          cash.set(10000);
+          gameOver.set(false);
+          betTooBig.set(false);
+          situationMessage.setText("");
       });
       
       return root;
@@ -224,7 +344,6 @@ public class Blackjack extends Application {
     
     private void endGame() throws IOException {
         playable.set(false);
-        
         dealersHandValue.textProperty().bind(new SimpleStringProperty("Dealer: ").concat(dealer.valueProperty().asString()));
         
         int dealerValue = dealer.valueProperty().get();
@@ -238,17 +357,17 @@ public class Blackjack extends Application {
         } else if (dealerValue == playerValue) {
             dealer.showHidden();
             situationMessage.setText("IT'S A PUSH");
-            cash.set(cash.intValue() + betValue);
+            cash.set(cash.intValue() + betValue.intValue());
         
         } else if (playerValue == 21 && player.getSize() == 2) {
             dealer.showHidden();
             situationMessage.setText("BLACKJACK! THE PLAYER WINS");
-            cash.set(cash.intValue() + 3 * betValue);    
+            cash.set(cash.intValue() + 3 * betValue.intValue());    
             
         } else if (playerValue == 21 || dealerValue > 21 || playerValue > dealerValue){
             dealer.showHidden();
             situationMessage.setText("THE PLAYER WINS");
-            cash.set(cash.intValue() + 2 * betValue);
+            cash.set(cash.intValue() + 2 * betValue.intValue());
         
             
         } else {
@@ -256,6 +375,14 @@ public class Blackjack extends Application {
             situationMessage.setText("Unexpected outcome, bets returned. Sorry about that!");
         }
         dealersHandValue.textProperty().unbind();
+        if(cash.intValue() < 1) {
+            gameOver.set(true);
+            situationMessage.setText("GAME OVER");
+        }
+        
+        if(cash.intValue() < betValue.intValue()) {
+            betTooBig.set(true);
+        }
         
     }
    
@@ -279,33 +406,6 @@ public class Blackjack extends Application {
     
     public static void main(String[] args) throws IOException {
         launch(args);
-       /**
-        Deck deck = new Deck();
-        deck.buildDeck();
-        Card card = deck.drawCard();
-        String plzwork = card.toString();
-        System.out.println(plzwork);
-        String sizeoflist = Integer.toString(deck.listSize());
-        System.out.println(sizeoflist);
-        
-        JFrame window = new JFrame("Card Image");
-        window.setSize(400, 600);
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(true);
-        
-        JPanel content = new JPanel(new BorderLayout());
-        
-        JLabel cardcontent = new JLabel(new ImageIcon(card.getCardImage()));
-        cardcontent.setSize(300, 400);
-        
-        content.add(cardcontent);
-        window.add(content);
-        
-        deck.buildDeck();
-        sizeoflist = Integer.toString(deck.listSize());
-        System.out.println(sizeoflist); 
-        */
-        
     }
 
     
