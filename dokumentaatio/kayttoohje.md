@@ -4,7 +4,7 @@ Lataa tiedosto _Blackjack-1.0.jar_ ja _Cards.rar_
 
 ## Asennus
 
-Pura tiedosto _Cards.rar_ samaan hakemistoon missä tiedosto _Blackjack-1.0.jar_ sijaitsee. Selkeyden vuoksi on varmasti helpointa luoda uusi hakemisto ja siirtää _Blackjack-1.0.jar_ sinne ja purkaa _Cards.rar_ siellä.
+Pura tiedosto _Cards.rar_ samaan hakemistoon missä tiedosto _Blackjack-1.0.jar_ sijaitsee. Selkeyden vuoksi on varmasti helpointa luoda uusi hakemisto ja siirtää _Blackjack-1.0.jar_ sinne ja purkaa _Cards.rar_ siellä. Kun sovellus käynnistetään ensimmäisen kerran se luo "_data_" nimisen tiedoston johon peliraha tallennetaan. Tämä tiedosto luodaan samaan hakemistoon misää _Blackjack-1.0.jar_ sijaitsee. 
 
 ## Ohjelman käynnistäminen
 
