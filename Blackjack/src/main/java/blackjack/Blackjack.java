@@ -68,10 +68,7 @@ public class Blackjack extends Application {
       Path path = Paths.get("data.sav");
               
       if(Files.notExists(path)) {
-          FileOutputStream saveInitialValue = new FileOutputStream("data.sav");
-          ObjectOutputStream saveValue = new ObjectOutputStream(saveInitialValue);
-          saveValue.write(5000);
-          saveValue.close();
+          SaveData(5000);
           LoadData();
           
       } else {
@@ -213,7 +210,7 @@ public class Blackjack extends Application {
           cashAsInt = newValue.intValue();
           cahAsString = Integer.toString(cashAsInt);
           try {
-              SaveData();
+              SaveData(cashAsInt);
           } catch (IOException ex) {
               Logger.getLogger(Blackjack.class.getName()).log(Level.SEVERE, null, ex);
           }
@@ -415,12 +412,18 @@ public class Blackjack extends Application {
         
     }
     
-    public void SaveData() throws FileNotFoundException, IOException {
+    /**
+     * This method saves the current cash amount to the save file
+     * @param valueInput the value to be saved in the save file
+     * @throws FileNotFoundException if the save file isn't found
+     * @throws IOException 
+     */
+    public void SaveData(int valueInput) throws FileNotFoundException, IOException {
         
         try {
             FileOutputStream saveData = new FileOutputStream("data.sav");
             ObjectOutputStream save = new ObjectOutputStream(saveData);
-            save.write(cash.intValue());
+            save.writeInt(valueInput);
             save.close();
         
         } catch(Exception e) {
@@ -428,15 +431,21 @@ public class Blackjack extends Application {
         }
     }
     
+    /**
+     * This method loads the cash value from the save file
+     * @throws FileNotFoundException if the save file isn't found
+     * @throws IOException 
+     * @throws ClassNotFoundException 
+     */
     public void LoadData() throws FileNotFoundException, IOException, ClassNotFoundException {
         
         try {
-            FileInputStream saveData = new FileInputStream("data.sav");
-            ObjectInputStream save = new ObjectInputStream(saveData);
+            FileInputStream loadData = new FileInputStream("data.sav");
+            ObjectInputStream load = new ObjectInputStream(loadData);
             
-            int cashInBank = (int) save.readObject();
+            int cashInBank = (int) load.readInt();
             cash.set(cashInBank);
-            save.close();
+            load.close();
             
         } catch(Exception e) {
             e.printStackTrace();
