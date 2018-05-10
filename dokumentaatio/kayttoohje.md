@@ -14,3 +14,7 @@ Ohjelma käynnistetään suorittamaalla tiedosto _Blackjack-1.0.jar_. Tämän vo
 java -jar Blackjack-1.0.jar
 ```
 ## Pelin aloittaminen
+
+Peli avautuu seuraavaan näkymään:
+
+<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/1.PNG" width="400">
