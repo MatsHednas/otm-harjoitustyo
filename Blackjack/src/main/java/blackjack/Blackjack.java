@@ -23,6 +23,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 
 /**
@@ -47,18 +51,33 @@ public class Blackjack extends Application {
     
     Text dealersHandValue = new Text("Dealer: ");
     
-    SimpleIntegerProperty cash = new SimpleIntegerProperty(1001);
+    SimpleIntegerProperty cash = new SimpleIntegerProperty();
     int cashAsInt = cash.intValue();
     String cahAsString = Integer.toString(cashAsInt);
     SimpleIntegerProperty betValue = new SimpleIntegerProperty(0);
     int betAsInt = betValue.intValue();
     String betAsString = Integer.toString(betAsInt);
     
+    
     /**
      * This method creates the actual interface of the game as well as sets up all the variables
      * @return the root Pane of the game
      */
-    private Parent createGame() {
+    private Parent createGame() throws IOException, FileNotFoundException, ClassNotFoundException {
+      
+      Path path = Paths.get("data.sav");
+              
+      if(Files.notExists(path)) {
+          FileOutputStream saveInitialValue = new FileOutputStream("data.sav");
+          ObjectOutputStream saveValue = new ObjectOutputStream(saveInitialValue);
+          saveValue.write(5000);
+          saveValue.close();
+          LoadData();
+          
+      } else {
+          
+          LoadData();
+      }
         
       dealer = new Hand(dealersCards.getChildren());
       player = new Hand(playersCards.getChildren());
@@ -193,6 +212,11 @@ public class Blackjack extends Application {
       cash.addListener((obs, old, newValue) -> {
           cashAsInt = newValue.intValue();
           cahAsString = Integer.toString(cashAsInt);
+          try {
+              SaveData();
+          } catch (IOException ex) {
+              Logger.getLogger(Blackjack.class.getName()).log(Level.SEVERE, null, ex);
+          }
       });
       
       betValue.addListener((obs, old, newValue) -> {
@@ -390,6 +414,35 @@ public class Blackjack extends Application {
         }
         
     }
+    
+    public void SaveData() throws FileNotFoundException, IOException {
+        
+        try {
+            FileOutputStream saveData = new FileOutputStream("data.sav");
+            ObjectOutputStream save = new ObjectOutputStream(saveData);
+            save.write(cash.intValue());
+            save.close();
+        
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void LoadData() throws FileNotFoundException, IOException, ClassNotFoundException {
+        
+        try {
+            FileInputStream saveData = new FileInputStream("data.sav");
+            ObjectInputStream save = new ObjectInputStream(saveData);
+            
+            int cashInBank = (int) save.readObject();
+            cash.set(cashInBank);
+            save.close();
+            
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
    
     
     /**
