@@ -17,8 +17,6 @@ tarpeeksi rahaa kyseiseen panos-summaan. Jos pelaajalta loppuu raha peli on häv
     
   - Rahan hallinta toimii toivotusti
     - Pelaajan rahasumma tallennetaan jotta hän voi seuraavalla kerralla jatkaa samalla summalla
-    
-  - Graafinen käyttöliittymä toimii toivotusti
   
 ## Jatkokehitysideoita
 
