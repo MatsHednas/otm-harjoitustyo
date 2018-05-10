@@ -6,20 +6,6 @@
 
 ## Komentorivitoiminnot
 
-Testit suoritetaan komennolla
-
-```
-mvn test
-```
-
-Testikattavuusraportti saadaan luotua komennolla
-
-```
-mvn jacoco:report
-```
-
-Raporttia voi lukea avaamalla tiedosto _target/site/jacoco/index.html_
-
 ### Jar-tiedosto
 
 Komento
