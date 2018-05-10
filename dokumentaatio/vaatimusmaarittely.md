@@ -6,7 +6,6 @@ tarpeeksi rahaa kyseiseen panos-summaan. Jos pelaajalta loppuu raha peli on häv
 
 ## Perusversion tarjoama toiminnallisuus
 
-- Pelin ydinosat toimivat:
   - Pelaaja voi valita panoksensa
   
   - Pelaaja voi pyytää lisää kortteja tai ilmoittaa olevansa valmis
@@ -17,12 +16,11 @@ tarpeeksi rahaa kyseiseen panos-summaan. Jos pelaajalta loppuu raha peli on häv
     - Ei ota lisää kortteja jos arvo on 17 tai enemmän
     
   - Rahan hallinta toimii toivotusti
-  
+    - Pelaajan rahasumma tallennetaan jotta hän voi seuraavalla kerralla jatkaa samalla summalla
+    
   - Graafinen käyttöliittymä toimii ydinosien suhteen
   
 ## Jatkokehitysideoita
-
-Kun perustoiminnallisuus on toteutettu voidaan lisätä seuraavia toiminnallisuuksia:
 
 - Tuplaus(Double)
   - Pelaaja voi halutessaan tuplata panoksensa jos hänen kahden ensimmäisen saamansa kortin yhteisarvo on 9-11. Tällöin pelaaja saa
