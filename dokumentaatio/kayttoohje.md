@@ -17,4 +17,4 @@ java -jar Blackjack-1.0.jar
 
 Peli avautuu seuraavaan näkymään:
 
-<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/1.PNG" width="400">
+<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/1.PNG" width="500">
