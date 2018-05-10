@@ -4,7 +4,7 @@
 Sovellus on klassinen Blackjack-peli. Pelaaja aloittaa pelin tietyllä rahamäärällä ja voit itse valita panoksens kunhan hänellä on
 tarpeeksi rahaa kyseiseen panos-summaan. Jos pelaajalta loppuu raha peli on hävitty ja peli alkaa alusta.
 
-## Perusversion tarjoama toiminnallisuus
+## Nykyisen version tarjoama toiminnallisuus
 
   - Pelaaja voi valita panoksensa
   
@@ -18,7 +18,7 @@ tarpeeksi rahaa kyseiseen panos-summaan. Jos pelaajalta loppuu raha peli on häv
   - Rahan hallinta toimii toivotusti
     - Pelaajan rahasumma tallennetaan jotta hän voi seuraavalla kerralla jatkaa samalla summalla
     
-  - Graafinen käyttöliittymä toimii ydinosien suhteen
+  - Graafinen käyttöliittymä toimii toivotusti
   
 ## Jatkokehitysideoita
 
