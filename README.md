@@ -7,6 +7,10 @@ Sovellus on klassinen blackjack peli. Pelaajalla on aloittaessaan pelin ensimmä
 
 [Vaatimusmäärittely](https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
+[Arkkitehtuurikuvaus](https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
+[Testausdokumentti](https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/testaus.md)
+
 [Työaikakirjanpito](https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 ## Komentorivitoiminnot
