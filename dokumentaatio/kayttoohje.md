@@ -17,7 +17,7 @@ java -jar Blackjack-1.0.jar
 
 Peli avautuu seuraavaan näkymään:
 
-<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/1.PNG" width="500">
+<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/1.PNG" width="600">
 
 Pelaaminen aloitetaan valitsemalla panos ja painamalla _PLAY_.
 
@@ -25,7 +25,7 @@ Pelaaminen aloitetaan valitsemalla panos ja painamalla _PLAY_.
 
 Kun pelaaja painaa play nappia peli alkaa:
 
-<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/2.PNG" width="500">
+<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/2.PNG" width="600">
 
 Pelaaja voi kysyä lisää kortteja painamalla _HIT_ tai jos on tyytyväinen kortteihinsa voi antaa vuoron jakajalle painamalla _STAND_.
 
@@ -33,7 +33,7 @@ Pelaaja voi kysyä lisää kortteja painamalla _HIT_ tai jos on tyytyväinen kor
 
 Peli loppuu jos pelajaalla tai jakajalla on "Blackjack", jos pelaajan käsi ylittää arvon 21 tai kun pelaaja on painanut _STAND_ nappia ja jakaja on suorittanut vuoronsa:
 
-<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/3.PNG" width="500">
+<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/3.PNG" width="600">
 
 Nyt pelaaja voi halutessaan jatkaa peliä samalla panoksella painamalla _PLAY_ nappia, tai vahitaa panossummaa ja sitten jatkaa peliä.
 
@@ -41,6 +41,6 @@ Nyt pelaaja voi halutessaan jatkaa peliä samalla panoksella painamalla _PLAY_ n
 
 Jos pelaajan peliraha putoaa nollaan hän ei voi jatkaa peliä ja pöydälle ilmestyy teksti joka huomauttaa että peli on päättynyt ("GAME OVER")
 
-<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/4.PNG" width="500">
+<img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/4.PNG" width="600">
 
 Pelaaja voi nyt aloittaa koko pelin alusta painamalla nappia _RESET GAME_ jolloin peli alkaa alusta ja pelaajalle annetaan taas 500$ pelirahaa.
