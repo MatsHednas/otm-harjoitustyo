@@ -18,3 +18,5 @@ java -jar Blackjack-1.0.jar
 Peli avautuu seuraavaan näkymään:
 
 <img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/1.PNG" width="500">
+
+Pelaaminen aloitetaan valitsemalla panos ja painamall _PLAY_.
