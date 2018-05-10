@@ -328,7 +328,7 @@ public class Blackjack extends Application {
       });
       
       reset.setOnAction(event -> {
-          cash.set(10000);
+          cash.set(5000);
           gameOver.set(false);
           betTooBig.set(false);
           situationMessage.setText("");
