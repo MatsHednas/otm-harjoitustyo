@@ -37,7 +37,7 @@ Peli loppuu jos pelajaalla tai jakajalla on "Blackjack", jos pelaajan käsi ylit
 
 Nyt pelaaja voi halutessaan jatkaa peliä samalla panoksella painamalla _PLAY_ nappia, tai vahitaa panossummaa ja sitten jatkaa peliä.
 
-## Pelin lopullinen päättyminen("Game Over")
+## Pelin lopullinen päättyminen
 
 Jos pelaajan peliraha putoaa nollaan hän ei voi jatkaa peliä ja pöydälle ilmestyy teksti joka huomauttaa että peli on päättynyt ("GAME OVER")
 
