@@ -45,4 +45,4 @@ Jos pelaajan peliraha putoaa nollaan hän ei voi jatkaa peliä ja pöydälle ilm
 
 <img src= "https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/4.PNG" width="600">
 
-Pelaaja voi nyt aloittaa koko pelin alusta painamalla nappia _RESET GAME_ jolloin peli alkaa alusta ja pelaajalle annetaan taas 500$ pelirahaa.
+Pelaaja voi nyt aloittaa koko pelin alusta painamalla nappia _RESET GAME_ jolloin peli alkaa alusta ja pelaajalle annetaan taas 5000$ pelirahaa.
