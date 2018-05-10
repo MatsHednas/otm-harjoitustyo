@@ -5,6 +5,10 @@
  */
 package blackjacktests;
 
+import blackjack.Card;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -37,9 +41,16 @@ public class CardTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void theConstructorWorksProperly() {
+        Card card = new Card("Ace", "spades", 11);
+        assertEquals("Ace_of_spades", card.toString());
+    }
+    
+    @Test
+    public void returnsTheRightValue() {
+        Card card = new Card("Ace", "spades", 11);
+        assertEquals(Integer.toString(card.getCardValue()), "11");
+    }
+    
 }

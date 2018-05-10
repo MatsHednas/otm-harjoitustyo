@@ -5,6 +5,8 @@
  */
 package blackjacktests;
 
+import blackjack.Deck;
+import java.io.IOException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -37,9 +39,18 @@ public class DeckTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void buildsADeckOf52Cards() throws IOException {
+        Deck deck = new Deck();
+        deck.buildDeck();
+        assertEquals(Integer.toString(deck.deckSize()), "52");
+    }
+    
+    @Test
+    public void drawingACardRemovesItFromTheDeck() throws IOException {
+        Deck deck = new Deck();
+        deck.buildDeck();
+        deck.drawCard();
+        assertEquals(Integer.toString(deck.deckSize()), "51");
+    }
 }

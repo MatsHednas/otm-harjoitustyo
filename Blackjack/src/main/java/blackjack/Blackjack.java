@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package blackjack;
 
 import java.awt.image.BufferedImage;
@@ -31,8 +26,10 @@ import javafx.stage.Stage;
 
 
 /**
- *
- * @author mazz
+ * This is the main game class. The game utilizes a deck, two hands(one for the player
+ * and one for the dealer) as well as several other variables to build up the interface
+ * and make the background logic work.
+ * Some comments are added for clarification
  */
 public class Blackjack extends Application {
     
@@ -51,12 +48,16 @@ public class Blackjack extends Application {
     Text dealersHandValue = new Text("Dealer: ");
     
     SimpleIntegerProperty cash = new SimpleIntegerProperty(1001);
-    int money = cash.intValue();
-    String bank = Integer.toString(money);
+    int cashAsInt = cash.intValue();
+    String cahAsString = Integer.toString(cashAsInt);
     SimpleIntegerProperty betValue = new SimpleIntegerProperty(0);
     int betAsInt = betValue.intValue();
     String betAsString = Integer.toString(betAsInt);
     
+    /**
+     * This method creates the actual interface of the game as well as sets up all the variables
+     * @return the root Pane of the game
+     */
     private Parent createGame() {
         
       dealer = new Hand(dealersCards.getChildren());
@@ -82,10 +83,9 @@ public class Blackjack extends Application {
       Rectangle betmat = new Rectangle(230, 640);
       betmat.setArcHeight(50);
       betmat.setWidth(50);
-      //betmat.setFill(Color.RED);
       
       
-      //PLAYMAT
+      //Here we set up the playmat where the cards are displayed etc
       
       StackPane playmatStack = new StackPane();
       
@@ -98,7 +98,7 @@ public class Blackjack extends Application {
       playmatVBox.getChildren().addAll(dealersHandValue, dealersCards, situationMessage, playersCards, playersHandValue);
       playmatStack.getChildren().addAll(playmat, playmatVBox);
       
-      //BETMAT
+      //Here we set up the betmat where the player controls the game
       
       StackPane betmatStack = new StackPane();
       
@@ -145,12 +145,12 @@ public class Blackjack extends Application {
               filler1, filler2, reset);
       betmatStack.getChildren().addAll(betmat, betmatVBox);
       
-      // ADD BOTH SIDES STACKPANES TO THE ROOT LAYOUT
+      // Here we add both stacks to the root layout
       
       rootLayout.getChildren().addAll(playmatStack, betmatStack);
       root.getChildren().addAll(base, rootLayout);
       
-      // BIND THE PROPERTIES
+      // Here we bind our various properties to follow the situation of the game
       
       BooleanBinding playBond = playable.or(gameOver).or(betTooBig);
       play.disableProperty().bind(playBond);
@@ -162,16 +162,13 @@ public class Blackjack extends Application {
       bet50.disableProperty().bind(playable);
       bet100.disableProperty().bind(playable);
       bet500.disableProperty().bind(playable);
-      //play.disableProperty().bind(gameOver);
       reset.disableProperty().bind(gameOver.not());
-      
-      
-      
-      
       
       playersHandValue.textProperty().bind(new SimpleStringProperty("Player: ").concat(player.valueProperty().asString()));
       saldo.textProperty().bind(new SimpleStringProperty("Money: ").concat(cash.asString()).concat("$"));
       betAmount.textProperty().bind(new SimpleStringProperty("Bet: ").concat(betValue.asString()).concat("$"));
+      
+      // Here we add the listeners that are needed to keep the game interface up-to-date
       
       player.valueProperty().addListener((obs, old, newValue) -> {
           if (newValue.intValue() >= 21) {
@@ -194,8 +191,8 @@ public class Blackjack extends Application {
       });
       
       cash.addListener((obs, old, newValue) -> {
-          money = newValue.intValue();
-          bank = Integer.toString(money);
+          cashAsInt = newValue.intValue();
+          cahAsString = Integer.toString(cashAsInt);
       });
       
       betValue.addListener((obs, old, newValue) -> {
@@ -204,8 +201,7 @@ public class Blackjack extends Application {
       }
       );
       
-      
-      //INIT BUTTONS
+      // Here we determine what our various buttons do
       
       play.setOnAction(event -> {
           try {
@@ -321,12 +317,16 @@ public class Blackjack extends Application {
       
     }
     
+    /**
+     * This method gets called whenever we press the "PLAY" button, it rebuilds the deck
+     * clears the hands and deals new cards
+     * @throws IOException if an image isn't found
+     */
     private void newGame() throws IOException {
         playable.set(true);
         situationMessage.setText("");
         dealersHandValue.textProperty().setValue("Dealer: ");
         deck.buildDeck();
-        //cash.set(cash.intValue() - betValue);
         
         dealer.clear();
         player.clear();
@@ -342,6 +342,11 @@ public class Blackjack extends Application {
         
     }
     
+    /**
+     * This method is called whenever requirements of ending the game has been met. The method determines
+     * the winner of the game and checks if the game is over.
+     * @throws IOException if the hidden card cannot be shown because the image file isn't found
+     */
     private void endGame() throws IOException {
         playable.set(false);
         dealersHandValue.textProperty().bind(new SimpleStringProperty("Dealer: ").concat(dealer.valueProperty().asString()));
@@ -387,10 +392,11 @@ public class Blackjack extends Application {
     }
    
     
-    
-     
-    
-    
+    /**
+     * The start method creates the game window and launches the application within it
+     * @param primaryStage the actual game window
+     * @throws Exception if the game cannot be created
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         
@@ -403,7 +409,11 @@ public class Blackjack extends Application {
     } 
     
 
-    
+    /**
+     * The main method that launches the application
+     * @param args the arguments of the application
+     * @throws IOException if the game cannot be started
+     */
     public static void main(String[] args) throws IOException {
         launch(args);
     }

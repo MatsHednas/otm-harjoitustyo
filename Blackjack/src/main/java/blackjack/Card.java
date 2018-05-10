@@ -1,7 +1,4 @@
-
 package blackjack;
-
-
 
 import javafx.scene.shape.Rectangle;
 import java.awt.image.BufferedImage;
@@ -15,8 +12,8 @@ import javafx.scene.image.WritableImage;
 import javax.imageio.ImageIO;
 
 /**
- *
- * @author mazz
+ * Each card has a name, suit and value. An BufferedImage can also be added
+ * to give the card an image representation.
  */
 public class Card extends Parent {
     
@@ -25,7 +22,7 @@ public class Card extends Parent {
     private BufferedImage cardImage;
     
     /**
-     * The Card class constructor
+     * The constructor for the Card class
      * @param name = 2,3,4,...,Jack,Queen,King,Ace
      * @param suit "spades","clubs","hearts","diamonds"
      * @param value = 1,2,3,...8,9,10,11
@@ -41,37 +38,37 @@ public class Card extends Parent {
     }
     
     /**
-     * This returns the name and suit of the card in String form
-     * @return 
+     * @return a string representation of the card
      */
     public String toString() {
         return cardName + "_of_" + suit;
     }
     
     /**
-     * Returns the value of the card as an integer
-     * @return 
+     * @return the value of the card as an integer
      */
     public int getCardValue() {
         return cardValue;
     }
     
     /**
-     * Returns the image of the card as a BufferedImage
-     * @return 
+     * @return an image representation of the card as a BufferedImage
      */
     public BufferedImage getCardImage() {
         return cardImage;
     }
     
     /**
-     * 
-     * @param image Sets a BuffereImage as the cards image
+     * @param image sets a BufferedImage as the cards image
      */
     public void setCardImage(BufferedImage image) {
         this.cardImage = image;
     }
     
+    /**
+     * Makes a "slot" for the card by creating a StackPane with the cards image
+     * which can then later be added to the main game-interface.
+     */
     public void setCardSlot() {
         
         Rectangle cardSlot = new Rectangle(72,96);
@@ -81,6 +78,11 @@ public class Card extends Parent {
         getChildren().add(new StackPane(cardSlot, cardView));
     }
     
+    /**
+     * "Hides" the card by changing the image of the card to an image of the backside
+     * of a playing card
+     * @throws IOException if the image file isn't found
+     */
     public void hideCard() throws IOException {
         BufferedImage backside = ImageIO.read(new File("Cards/Backside.png"));
         this.cardImage = backside;

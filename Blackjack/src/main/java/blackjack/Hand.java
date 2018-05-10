@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package blackjack;
 
 
@@ -13,10 +8,8 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.Node;
 import javax.imageio.ImageIO;
 
-
 /**
- *
- * @author mazz
+ * The hand contains an ObservableList of cards.
  */
 public class Hand {
         
@@ -24,10 +17,19 @@ public class Hand {
     private SimpleIntegerProperty valueOfHand = new SimpleIntegerProperty(0);
     private int numberOfAces = 0;
     
+    /**
+     * The constructor of the Hand class
+     * @param cardsInHand the ObservableList that contains the cards in the hand
+     */
     public Hand(ObservableList<Node> cardsInHand) {
         this.cardsInHand = cardsInHand;
     }
     
+    /**
+     * Adds a card to the hand and increments the value of the hand by
+     * the value of the added card
+     * @param card is the card is to be added
+     */
     public void addCard(Card card) {
         cardsInHand.add(card);
         
@@ -43,20 +45,27 @@ public class Hand {
         }
     }
     
+    /**
+     * Clears the hand, removing all cards and resetting the value of the hand
+     * as well as the number of aces..
+     */
     public void clear() {
         cardsInHand.clear();
         valueOfHand.set(0);
         numberOfAces = 0;
     }
     
+    /**
+     * @return the value of the hand
+     */
     public SimpleIntegerProperty valueProperty() {
         return valueOfHand;
     }
-    
-    public SimpleIntegerProperty getValue() {
-        return valueOfHand;
-    }
-    
+  
+    /**
+     * Shows the face of the dealers second card
+     * @throws IOException if the image file isn't found
+     */
     public void showHidden() throws IOException {
         Card toBeShown = (Card) cardsInHand.get(1);
         String name = toBeShown.toString();
@@ -65,6 +74,11 @@ public class Hand {
         
     }
     
+    
+    /**
+     * 
+     * @return the amount of cards in the hand
+     */
     public int getSize() {
         return this.cardsInHand.size();
     }

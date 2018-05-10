@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package blackjack;
 
 import static blackjack.Deck.RandomRange;
@@ -12,19 +7,25 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 /**
- *
- * @author mazz
+ * The Deck consists of and ArrayList of cards.
  */
 public class Deck {
     
     private ArrayList<Card> Cards;
     
+    /**
+     * The constructor for the Deck class
+     */
     public Deck() {
         
         this.Cards = new ArrayList<>();
         
     }
     
+    /**
+     * Builds the deck by creating all the cards and adding them to the deck
+     * @throws IOException if an image file isn't found
+     */
     public void buildDeck() throws IOException {
         
         this.Cards.clear();
@@ -65,7 +66,7 @@ public class Deck {
             }
             
             int currentFaceCard;
-            String currentFace = null;
+            String currentFace;
             
             for(currentFaceCard = 0; currentFaceCard < 3; currentFaceCard++) {
                 
@@ -96,6 +97,10 @@ public class Deck {
         }
     }
     
+    /**
+     * Draws a random card from the deck
+     * @return the card that is drawn
+     */
     public Card drawCard() {
         int random = RandomRange(0, this.Cards.size() - 1);
         Card card = this.Cards.get(random);
@@ -103,11 +108,20 @@ public class Deck {
         return card;
     }
     
-    public int listSize() {
-        int list = this.Cards.size();
-        return list;
+    /**
+     * @return the amount of cards in the deck
+     */
+    public int deckSize() {
+        int sizeOfDeck = this.Cards.size();
+        return sizeOfDeck;
     }
     
+    /**
+     * 
+     * @param min the minimum value that can be returned
+     * @param max the maximum value that can be returned
+     * @return a random value between the min and max value
+     */
     public static int RandomRange(int min, int max) {
         int range = (max - min) + 1;
         return (int)(Math.random()*range) + min;
