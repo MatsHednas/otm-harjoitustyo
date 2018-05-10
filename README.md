@@ -1,4 +1,7 @@
 # Blackjack
+
+Sovellus on klassinen blackjack peli. Pelaajalla on aloittaessaan pelin ensimmäistä kertaa 5000$ pelirahaa ja hän voi itse valita panosumman kuudesta eri valmiista panosmäärästä. Peli tallentaa myös pelaajan rahasumman joten se pysyy samana seuraavan kertaan kun käyttäjä käynnistää pelin.
+
 ## Dokumentaatio
 [Vaatimusmäärittely](https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
