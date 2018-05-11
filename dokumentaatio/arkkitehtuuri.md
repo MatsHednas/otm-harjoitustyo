@@ -17,7 +17,7 @@ Sovellukseen logiikkaan liittyy kaikki neljä sovelluksen luokkaa:
 Luokka _Blackjack_ vastaa käyttöliittymästa ja osasta sovellusloogiikkaa. Siihen liittyvistä metodeista keskisimmät logiikan suhteen ovat 
 - Parent createGame()
 - void newGame()
-- voidendGame()
+- void endGame()
 
 Metodi _createGame()_ luo itse pelikenttänäkymän ja saa paluuarvokseen pää-"Panen" _root_. Kun painetaan nappia _PLAY_ kutsutaan metodia _newGame()_ joka asettaa uudellen kaikki käsiin ja muuhun peliin liittyvät muuttujat. Kun peli on päässyt siihen vaiheesen että jokin loppumiseen johtavista vaatimuksista toteutuu kutsutaan metodia _endGame()_ jossa määritellään kuka voitti kyseisen pelikierroksen ja jos pelaajalla on tarpeeksi rahaa voidakseen jatkaa pelaamista.
 
