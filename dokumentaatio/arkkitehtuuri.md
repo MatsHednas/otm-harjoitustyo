@@ -6,7 +6,7 @@ Ohjelma on toteutetty yhdessä paketissa _blacckjack_ johon sisältyy kolme sove
 
 ## Käyttöliittymä
 
-Käyttyliittymään liitty yksi päänäkymä johon siält
+Käyttyliittymään liitty yksi päänäkymä. Tämä kostoo pää-"Panesta" _root_ jonka sisään on lisätty kaksi vierekkäistä StackPanea _playmat_ ja _betmat_. Vasemmalla StackPanella eli _playmat_:illa näkyvät pelaajan sekä jakajan kortit ja vasemmalla StackPanella eli _betmat_:illa taas löytyvät kaikki pelin toiminnot johon pääsee käsiksi nappien avulla.
 
 ## Tiedon pysyväistallennus
 
