@@ -27,6 +27,10 @@ Kun sovellus käynnistetään ensimmäisen kerran se luo automaattisesti tiedost
 
 ## Päätoiminnallisuudet
 
+Kun sovellus käynnistetään se luo pelinäkymän, korttipakan (_Deck_) ja kaksi kättä (_Hand_) joista yksi on pelaajan ja toinen on jakajan.
+
+Pelinäkymässä voidaan nyt painaa eri panosarvonappeja jotka asettavat panossumman ja sitten aloittaa pelin painamalla _PLAY_ nappia joka aloittaa pelin lisäämällä pelaajan sekä jakajan käteen kaksi korttia metodilla _addCard()_. Nyt jos kumpikaan ei vielä voittanut peliä
+
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
 ### Käyttöliittymä
