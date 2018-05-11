@@ -14,7 +14,7 @@ Pääluokkaa [Blackjack](https://github.com/MatsHednas/otm-harjoitustyo/blob/mas
 
 Käyttöliittymäluokkaa lukuunottamatta sovelluksen testien rivikattavuus on % ja haarautumakattavuus %
 
-
+<img src="https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/kattavuus.png" width="800">
 
 Kaikkia metodeja testataan mutta jostain syystä yhdne "if"-lauseen argumentit eivät lasketa läpikäydyiksi vaikka loput lauseesta kyllä toteutuu.
 
