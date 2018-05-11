@@ -9,5 +9,5 @@
 |  8.5  |   7h   | Hand luokka valmis ja pääluokka aloitettu |
 |  9.5  |  10h   | Pääluokka melkein valmis, peliä pystyy pelaamaan |
 | 10.5  |  10h   | Pääluokka valmis pitkäaikaistallennus mukaanlukien, Javadoc valmis, dokumentaatiota jatkettu |
-| 11.5  |   8h   | Koko ohjelma, testit mukaanlukien valmis. Dokumentointi valmis |
-| yht   |46.5h   |
+| 11.5  |   6h   | Koko ohjelma, testit mukaanlukien valmis. Dokumentointi valmis. Työ palautettu. |
+| yht   |44.5h   |
