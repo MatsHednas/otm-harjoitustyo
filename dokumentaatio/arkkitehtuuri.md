@@ -29,7 +29,11 @@ Kun sovellus käynnistetään ensimmäisen kerran se luo automaattisesti tiedost
 
 Kun sovellus käynnistetään se luo pelinäkymän, korttipakan (_Deck_) ja kaksi kättä (_Hand_) joista yksi on pelaajan ja toinen on jakajan.
 
-Pelinäkymässä voidaan nyt painaa eri panosarvonappeja jotka asettavat panossumman ja sitten aloittaa pelin painamalla _PLAY_ nappia joka aloittaa pelin lisäämällä pelaajan sekä jakajan käteen kaksi korttia metodilla _addCard()_. Nyt jos kumpikaan ei vielä voittanut peliä
+Pelinäkymässä voidaan nyt painaa eri panosarvonappeja jotka asettavat panossumman ja sitten aloittaa pelin painamalla _PLAY_ nappia joka kutsuu metodia _newGame()_, joka puolestaan aloittaa pelin lisäämällä pelaajan sekä jakajan käteen kaksi korttia metodilla _addCard()_. Nyt jos kumpikaan ei heti voita peliä, pelaaja voi halutessaan pyytää lisää kortteja painamalla _HIT_ nappia joka taas kutsuu käden  _addCard()_ metodia. Kun hän on tyytyväinen kortteihinsa pelaaja voi painaa _STAND_ nappia jolloin vuoro siirtyy jakajalle joka pelaa kätensä sääntöjen mukaisesti.
+
+Kun jokin pelin päättymiseen johtavista vaatimuksista toteutuu kutsutaan metodia _endGame()_. Tämä metodi määrittelee voittajan ja tarkastaa jos pelaajalla vielä on tarpeeksi rahaa pelin jatkamiseen. Jos pelaajalla on tarpeeksi rahaa jatkaakseen hän voi valita uuden panossumman tai jatkaa samalla painamall taas _PLAY_ nappia. Jos pelaajalla ei ole tarpeeksi rahaa ruudulle ilmestyy teksti "GAME OVER" ja _RESET GAME_ nappi muuttu aktiiviseksi. Painamalla tätä nappia pelaaja voi aloittaa pelin alusta ja peli asettaa pelirahaksi summan 5000$.
+
+Milloin napit avot aktiivisia eli painettavissa määritellään muutaman tietyn totuusarvomuuttujan avulla joihin napit ovat sidottuja.
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
