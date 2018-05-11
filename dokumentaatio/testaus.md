@@ -12,7 +12,7 @@ Pääluokkaa [Blackjack](https://github.com/MatsHednas/otm-harjoitustyo/blob/mas
 
 ### Testikattavuus
 
-Käyttöliittymäluokkaa lukuunottamatta sovelluksen testien rivikattavuus on 100% ja haarautumakattavuus 94%
+Käyttöliittymäluokkaa lukuunottamatta sovelluksen testien rivikattavuus on 100% ja haarautumakattavuus 94%.
 
 <img src="https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/testikattavuus.png" width="800">
 
