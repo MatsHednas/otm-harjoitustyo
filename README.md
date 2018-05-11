@@ -15,6 +15,22 @@ Sovellus on klassinen blackjack peli. Pelaajalla on aloittaessaan pelin ensimmä
 
 ## Komentorivitoiminnot
 
+### Testaus
+
+Testit voidaan suorittaa komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportin voi luoda komennolla
+```
+mvn jacoco:report
+```
+
+Kattavuusraporttia voi tarkastella avaamalla tiedosto _target/site/jacoco/index.html_ selaimella
+
+
 ### Jar-tiedosto
 
 Komento
@@ -34,3 +50,13 @@ mvn javadoc:javadoc
 ```
 
 JavaDocia voi tarkastella avaamalla tiedosto _target/site/apidocs/index.html_
+
+### Checkstyle
+
+Tiedostoon [checkstyle.xml](https://github.com/mluukkai/OtmTodoApp/blob/master/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
+
+```
+ mvn jxr:jxr checkstyle:checkstyle
+```
+
+Mahdolliset virheet löytyvät avaamalla tiedosto _target/site/checkstyle.html_ selaimella
