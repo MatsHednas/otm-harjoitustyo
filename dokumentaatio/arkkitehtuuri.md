@@ -23,6 +23,8 @@ Metodi _createGame()_ luo itse pelikenttänäkymän ja saa paluuarvokseen pää-
 
 ## Tiedon pysyväistallennus
 
+Kun sovellus käynnistetään ensimmäisen kerran se luo automaattisesti tiedoston nimeltä "_data_" tämä on [SAV-tiedosto](https://whatis.techtarget.com/fileformat/SAV-Saved-date-file-for-SPSS-Statistical-Package-for-the-Social-Sciences) johon tallennetaan pelaajan rahasumma aina sen mukaan kun se muuttuu. Jos kyseinen tiedosto siirretään pois hakemistosta missä se luotiin, tai jos se poistetaan, ohjelma luo seuraavalla käynnistyskerralla uuden tallennustiedoston. 
+
 ## Päätoiminnallisuudet
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
@@ -30,6 +32,10 @@ Metodi _createGame()_ luo itse pelikenttänäkymän ja saa paluuarvokseen pää-
 ### Käyttöliittymä
 
 Käyttöliittymäluokka on toteutettu samaan pakettiin kun sovellusloogiikkaan liittyväät luokat. Tämän lisäksi käyttöliittymä ei ole toteutettu aivan erilliseksi sovelluslogiikasta sillä joitakin sovelluslogiikkaan liittyviä rakenteita löytyy käyttöliittymäluokasta.
+
+## Korttikuvat
+
+Korttien kuvat olisi voitu jotenkin pakata jar tiedostoon mukaan jotta asennus olisi vielä helpompaa.
 
 ### Testiluokat
 
