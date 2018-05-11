@@ -12,7 +12,7 @@ Käyttyliittymään liitty yksi päänäkymä. Tämä kostoo pää-"Panesta" _ro
 
 Sovellukseen logiikkaan liittyy kaikki neljä sovelluksen luokkaa:
 
-<img src="https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/rakenne.png" width="400">
+<img src="https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/rakenne.png" width="500">
 
 Luokka _Blackjack_ vastaa käyttöliittymästa ja osasta sovellusloogiikkaa. Siihen liittyvistä metodeista keskisimmät logiikan suhteen ovat 
 - Parent createGame()
