@@ -22,7 +22,7 @@ public class Card extends Parent {
     private BufferedImage cardImage;
     
     /**
-     * The constructor for the Card class
+     * The constructor for the Card class.
      * @param name = 2,3,4,...,Jack,Queen,King,Ace
      * @param suit "spades","clubs","hearts","diamonds"
      * @param value = 1,2,3,...8,9,10,11
@@ -38,6 +38,7 @@ public class Card extends Parent {
     }
     
     /**
+     * A string representation of the card.
      * @return a string representation of the card
      */
     public String toString() {
@@ -45,6 +46,7 @@ public class Card extends Parent {
     }
     
     /**
+     * The value of the card.
      * @return the value of the card as an integer
      */
     public int getCardValue() {
@@ -52,6 +54,7 @@ public class Card extends Parent {
     }
     
     /**
+     * An image representation of the card.
      * @return an image representation of the card as a BufferedImage
      */
     public BufferedImage getCardImage() {
@@ -59,6 +62,7 @@ public class Card extends Parent {
     }
     
     /**
+     * Sets an image for the card.
      * @param image sets a BufferedImage as the cards image
      */
     public void setCardImage(BufferedImage image) {
@@ -71,7 +75,7 @@ public class Card extends Parent {
      */
     public void setCardSlot() {
         
-        Rectangle cardSlot = new Rectangle(72,96);
+        Rectangle cardSlot = new Rectangle(72, 96);
         WritableImage cardFXImage = SwingFXUtils.toFXImage(cardImage, null);
         ImageView cardView = new ImageView(cardFXImage);
      
@@ -79,7 +83,7 @@ public class Card extends Parent {
     }
     
     /**
-     * "Hides" the card by changing the image of the card to an image of the backside
+     * "Hides" the card by changing the image of the card to an image of the backside.
      * of a playing card
      * @throws IOException if the image file isn't found
      */
