@@ -8,6 +8,6 @@
 |  7.5  |   6h   | Deck luokka valmis |
 |  8.5  |   7h   | Hand luokka valmis ja pääluokka aloitettu |
 |  9.5  |  10h   | Pääluokka melkein valmis, peliä pystyy pelaamaan |
-| 10.5  |   6h   | Pääluokka valmis pitkäaikaistallennus mukaanlukien, Javadoc valmis, dokumentaatiota jatkettu |
+| 10.5  |   8h   | Pääluokka valmis pitkäaikaistallennus mukaanlukien, Javadoc valmis, dokumentaatiota jatkettu |
 | 11.5  |   8h   | Koko ohjelma, testit mukaanlukien valmis. Dokumentointi valmis |
 
