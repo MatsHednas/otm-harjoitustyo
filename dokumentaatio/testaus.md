@@ -20,7 +20,7 @@ Kaikkia metodeja testataan mutta jostain syystä yhdne "if"-lauseen argumentit e
 
 Järjestelmätestaus on suoritettu manuaalisesti.
 
-## Asennus ja toiminnallisuudet
+### Asennus ja toiminnallisuudet
 
 Sovellus on testattu sen [Käyttöohjeen](https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md) mukaisesti sekä Windows- että linux ympäristöissä. Molemmissa tapauksissa kaikki [määrittelydokumentin](https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md) listaama nykyisen version toiminnallisuus on käyty läpi jo tedettu toimivaksi.
 
