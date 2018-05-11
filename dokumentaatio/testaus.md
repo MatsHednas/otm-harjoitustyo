@@ -16,7 +16,7 @@ Käyttöliittymäluokkaa lukuunottamatta sovelluksen testien rivikattavuus on 10
 
 <img src="https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/testikattavuus.png" width="800">
 
-Kaikkia metodeja testataan mutta jostain syystä yhden "if"-lauseen argumentit eivät lasketa läpikäydyiksi vaikka loput lauseesta kyllä toteutuu.
+Kaikkia metodeja testataan mutta jostain syystä yhden "if"-lauseen argumentit eivät lasketa läpikäydyiksi vaikka ne kyllä toteutuvat loput lauseesta kyllä käydään läpi.
 
 ## Järjestelmätestaus
 
