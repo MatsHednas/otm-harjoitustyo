@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto _Blackjack-1.0.jar_ ja _Cards.rar_
+Lataa tiedostot _Blackjack-1.0.jar_ ja _Cards.rar_ [täältä](https://github.com/MatsHednas/otm-harjoitustyo/releases/tag/1.0)
 
 ## Asennus
 
