@@ -12,11 +12,11 @@ Pääluokkaa [Blackjack](https://github.com/MatsHednas/otm-harjoitustyo/blob/mas
 
 ### Testikattavuus
 
-Käyttöliittymäluokkaa lukuunottamatta sovelluksen testien rivikattavuus on % ja haarautumakattavuus %
+Käyttöliittymäluokkaa lukuunottamatta sovelluksen testien rivikattavuus on 100% ja haarautumakattavuus 94%
 
 <img src="https://github.com/MatsHednas/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/testikattavuus.png" width="800">
 
-Kaikkia metodeja testataan mutta jostain syystä yhdne "if"-lauseen argumentit eivät lasketa läpikäydyiksi vaikka loput lauseesta kyllä toteutuu.
+Kaikkia metodeja testataan mutta jostain syystä yhden "if"-lauseen argumentit eivät lasketa läpikäydyiksi vaikka loput lauseesta kyllä toteutuu.
 
 ## Järjestelmätestaus
 
