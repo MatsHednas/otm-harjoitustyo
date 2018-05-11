@@ -41,7 +41,7 @@ Milloin napit avot aktiivisia eli painettavissa määritellään muutaman tietyn
 
 Käyttöliittymäluokka on toteutettu samaan pakettiin kun sovellusloogiikkaan liittyväät luokat. Tämän lisäksi käyttöliittymä ei ole toteutettu aivan erilliseksi sovelluslogiikasta sillä joitakin sovelluslogiikkaan liittyviä rakenteita löytyy käyttöliittymäluokasta.
 
-## Korttikuvat
+### Korttikuvat
 
 Korttien kuvat olisi voitu jotenkin pakata jar tiedostoon mukaan jotta asennus olisi vielä helpompaa.
 
